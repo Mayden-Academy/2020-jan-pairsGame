@@ -2,9 +2,9 @@
 
 Game instructions:
 
-The aim of the game is to find all the matching pairs,
-Click on two images to see the devs who are there.
-Each turn, try and remember the devs places,
+The aim of the game is to find all matching pairs,
+Click on two squares to see the devs who are there.
+Each turn, try to remember their places,
 When you have found a matching pair you will still see their faces.
 
-If pairing all the devs is done, then the game is won!
+If pairing all the devs is done, then the matching game is won!
