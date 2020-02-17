@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "truenoRg";
+    src: url("TruenoRg.otf");
+}
+
+.container {
+    width: 700px;
+    margin: 0 auto;
+}
