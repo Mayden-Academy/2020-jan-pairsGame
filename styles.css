@@ -7,6 +7,30 @@
     src: url("TruenoRg.otf");
 }
 
+header {
+    background-color: #F27424;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    padding-top: 5px;
+}
+
+header div {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 650px;
+    bottom: 10px;
+    border: 4px solid black;
+    border-radius: 50%;
+}
+
 body {
     font-family: 'truenoRg', sans-serif;
 }
