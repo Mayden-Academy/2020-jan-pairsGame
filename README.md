@@ -1,7 +1,7 @@
-# year-cohort-projectName
-project template repo
+# 2020-microHippos-pairs game
 
-Game instructions
+Game instructions:
+
 The aim of the game is to find all the matching pairs,
 Click on two images to see the devs who are there.
 Each turn, try and remember the devs places,
