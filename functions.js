@@ -1,6 +1,6 @@
 function randomiseDeck(cardArray) {
-    var currentIndex = cardArray.length
-    var temp,randomIndex
+    let currentIndex = cardArray.length
+    let temp, randomIndex
 
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex)
