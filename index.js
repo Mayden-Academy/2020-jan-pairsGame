@@ -1,9 +1,5 @@
 fetch('./deck.json')
-    .then((data)=>{
-        return data.json()
-    })
+    .then(data => data.json())
     .then((fetchDeck)=>{
-        var deck = []
-        deck = fetchDeck.hippos
-
+        let deck = fetchDeck.hippos
     })
