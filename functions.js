@@ -33,3 +33,11 @@ function cardShow (event, randomizedCards) {
     event.target.innerHTML = `<img src="${targetUrl}"/>`
 }
 
+function addClickEvents (assignedDeck) {
+    let cards = document.querySelectorAll('img')
+    cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+
+        })
+    })
+}
