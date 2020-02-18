@@ -37,7 +37,7 @@ header a:visited {
 }
 
 
-header div h1 {
+header .questionMark {
     height: 40px;
     width: 40px;
     position: absolute;
