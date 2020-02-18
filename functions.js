@@ -13,7 +13,6 @@ function addClickEvents (assignedDeck) {
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
            //cardShow(e, assignedDeck)
-            console.log(e.target)
         })
     })
 }
