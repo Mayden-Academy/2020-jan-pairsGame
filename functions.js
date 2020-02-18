@@ -23,10 +23,11 @@ function assignCards (randomizedArray) {
 }
 
 function cardShow (event, deck) {
-    let dataId = event.currentTarget.dataset.id
+    console.log(event)
+    let dataId = event.dataset.id
     deck.forEach(function (card) {
         if (dataId === card.id) {
-            event.target.src = card.url
+            event.childNodes[0].src = card.url
         }
     })
 }
@@ -35,7 +36,7 @@ function addClickEvents (assignedDeck) {
     let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-            cardShow(e, assignedDeck)
+            cardShow(this, assignedDeck)
         })
     })
 }
