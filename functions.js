@@ -22,22 +22,20 @@ function assignCards (randomizedArray) {
     })
 }
 
-function cardShow (event, randomizedCards) {
-    let targetUrl = ''
-    let dataId = event.target.dataset.id
-    randomizedCards.forEach(function (card) {
-        if (dataId == card.id) {
-            targetUrl = card.url
+function cardShow (event, deck) {
+    let dataId = event.currentTarget.dataset.id
+    deck.forEach(function (card) {
+        if (dataId === card.id) {
+            event.target.src = card.url
         }
     })
-    event.target.innerHTML = `<img src="${targetUrl}"/>`
 }
 
 function addClickEvents (assignedDeck) {
-    let cards = document.querySelectorAll('img')
+    let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-
+            cardShow(e, assignedDeck)
         })
     })
 }
