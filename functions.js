@@ -23,7 +23,6 @@ function assignCards (randomizedArray) {
 }
 
 function cardShow (event, deck) {
-    console.log(event)
     let dataId = event.dataset.id
     deck.forEach(function (card) {
         if (dataId === card.id) {
