@@ -67,6 +67,7 @@ main {
     height: 150px;
     margin: 10px;
     float: left;
+    cursor: pointer;
 }
 
 .card img {
