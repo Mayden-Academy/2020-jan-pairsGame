@@ -24,12 +24,16 @@ footer {
     margin-top: 10px;
 }
 
+footer h2 {
+    margin: 16px 0;
+}
+
 footer p {
     margin: 0;
 }
 
 footer p:last-child {
-    margin-top: 16px;
+    margin: 16px 0;
 }
 
 footer span {
