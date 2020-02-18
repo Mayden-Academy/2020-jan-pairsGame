@@ -3,4 +3,5 @@ fetch('./deck.json')
     .then((fetchDeck)=>{
         let deck = fetchDeck.hippos
         assignCards(deck)
+        addClickEvents(deck)
     })

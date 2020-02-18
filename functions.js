@@ -7,3 +7,14 @@ function assignCards (randomizedArray) {
         i++
     })
 }
+
+function addClickEvents (assignedDeck) {
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+           //cardShow(e, assignedDeck)
+            console.log(e.target)
+        })
+    })
+}
+
