@@ -4,5 +4,6 @@ fetch('./deck.json')
         let deck = fetchDeck.hippos
         deck = randomiseDeck(deck)
         assignCards(deck)
+        addClickEvents(deck)
     })
 
