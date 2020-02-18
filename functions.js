@@ -1,5 +1,5 @@
 function assignCards (randomizedArray) {
-    let cards = document.querySelectorAll(".card")
+    let cards = document.querySelectorAll('.card')
     console.log (cards)
     let i = 0
     cards.forEach(function(card) {
