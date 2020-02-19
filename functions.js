@@ -1,3 +1,7 @@
+var clickCounter = 0
+var clickedCard1 = {}
+var clickedCard2 = {}
+
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
     let temp, randomIndex
@@ -18,6 +22,7 @@ function assignCards (deck) {
     let i = 0
     cards.forEach(function(card) {
         card.dataset.id = deck[i].id
+        card.dataset.faceUp = '0'
         i++
     })
 }
@@ -26,7 +31,7 @@ function addClickEvents (deck) {
     let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-            cardShow(this, deck)
+            clickLogic(this, deck)
         })
     })
 }
@@ -36,6 +41,44 @@ function cardShow (event, deck) {
     deck.forEach(function (card) {
         if (dataId === card.id) {
             event.childNodes[0].src = card.url
+            event.dataset.faceUp = '1'
         }
     })
+}
+
+function cardHide (clickedCard1, clickedCard2) {
+    setTimeout(function () {
+        document.getElementById(clickedCard1.divId).childNodes[0].src = './images/hippo.jpg'
+        document.getElementById(clickedCard1.divId).dataset.faceUp = '0'
+        document.getElementById(clickedCard2.divId).childNodes[0].src = './images/hippo.jpg'
+        document.getElementById(clickedCard2.divId).dataset.faceUp = '0'
+        clickCounter = 0
+    }, 1000)
+}
+
+function comparison(a, b) {
+     return (a === b)
+}
+
+function clickLogic (clickedCard, deck) {
+    if (clickCounter === 0 && clickedCard.dataset.faceUp == 0) {
+        cardShow(clickedCard, deck)
+        clickedCard1 = {
+            divId : clickedCard.id,
+            url : clickedCard.childNodes[0].src
+        }
+        clickCounter = 1
+    } else if (clickCounter === 1 && clickedCard.dataset.faceUp == 0) {
+        cardShow(clickedCard, deck)
+        clickedCard2 = {
+            divId : clickedCard.id,
+            url : clickedCard.childNodes[0].src
+        }
+        if (comparison(clickedCard1.url, clickedCard2.url)) {
+            clickCounter = 0
+        } else {
+            clickCounter = 2
+            cardHide(clickedCard1, clickedCard2)
+        }
+    }
 }
