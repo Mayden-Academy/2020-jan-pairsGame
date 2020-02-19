@@ -1,7 +1,5 @@
 var clickCounter = 0
 var clickedCard1 = {}
-var clickedCard2 = {}
-
 
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
@@ -31,19 +29,26 @@ function addClickEvents (deck) {
     let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-        this.dataset.faceUp = 0
+        // this.dataset.faceUp = 0
             if (clickCounter === 0 && this.dataset.faceUp == 0) {
                 cardShow(this, deck)
-                this.dataset.faceUp = 1
                 clickedCard1 = {
                     divID : this.id,
                     url : this.childNodes[0].src
                 }
                 clickCounter = 1
-                console.log(clickedCard1, clickCounter)
             } else if (clickCounter === 1 && this.dataset.faceUp == 0) {
+                clickedCard2 = {
+                    divID : this.id,
+                    url : this.childNodes[0].src
+                }
                 cardShow(this, deck)
-                //comparison()
+                if (comparison(clickedCard1.url, clickedCard2.url)) {
+                    clickCounter = 0
+                } else {
+                    cardHide(clickedCard1, clickedCard2)
+                    clickCounter = 0
+                }
             }
 
 
