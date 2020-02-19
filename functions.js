@@ -13,12 +13,21 @@ function randomiseDeck(cardArray) {
     return cardArray
 }
 
-function assignCards (randomizedArray) {
+function assignCards (deck) {
     let cards = document.querySelectorAll('.card')
     let i = 0
     cards.forEach(function(card) {
-        card.dataset.id = randomizedArray[i].id
+        card.dataset.id = deck[i].id
         i++
+    })
+}
+
+function addClickEvents (deck) {
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            cardShow(this, deck)
+        })
     })
 }
 
@@ -28,14 +37,5 @@ function cardShow (event, deck) {
         if (dataId === card.id) {
             event.childNodes[0].src = card.url
         }
-    })
-}
-
-function addClickEvents (assignedDeck) {
-    let cards = document.querySelectorAll('.card')
-    cards.forEach(function (card) {
-        card.addEventListener('click', function (e) {
-            cardShow(this, assignedDeck)
-        })
     })
 }
