@@ -50,3 +50,7 @@ function cardHide (clickedCard1, clickedCard2) {
         document.getElementById(clickedCard2.divId).dataset.faceUp = '0'
     }, 2000)
 }
+
+function comparison(a, b) {
+     return (a === b)
+}
