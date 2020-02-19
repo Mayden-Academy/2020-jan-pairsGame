@@ -21,6 +21,7 @@ function assignCards (deck) {
     let i = 0
     cards.forEach(function(card) {
         card.dataset.id = deck[i].id
+        card.dataset.faceUp = '0'
         i++
     })
 }
@@ -61,7 +62,20 @@ function cardShow (event, deck) {
     deck.forEach(function (card) {
         if (dataId === card.id) {
             event.childNodes[0].src = card.url
+            event.dataset.faceUp = '1'
         }
     })
 }
 
+function cardHide (clickedCard1, clickedCard2) {
+    setTimeout(function () {
+        document.getElementById(clickedCard1.divId).childNodes[0].src = './images/hippo.jpg'
+        document.getElementById(clickedCard1.divId).dataset.faceUp = '0'
+        document.getElementById(clickedCard2.divId).childNodes[0].src = './images/hippo.jpg'
+        document.getElementById(clickedCard2.divId).dataset.faceUp = '0'
+    }, 2000)
+}
+
+function comparison(a, b) {
+     return (a === b)
+}
