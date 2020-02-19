@@ -31,18 +31,17 @@ function addClickEvents (deck) {
     let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-
-        console.log(this.dataset)
-            if (clickCounter === 0 && this.dataset.faceUp === 0) {
+        this.dataset.faceUp = 0
+            if (clickCounter === 0 && this.dataset.faceUp == 0) {
                 cardShow(this, deck)
                 this.dataset.faceUp = 1
                 clickedCard1 = {
-                    'htmlID' : this.id,
-                    'url' : this.childNodes[0].src
+                    divID : this.id,
+                    url : this.childNodes[0].src
                 }
                 clickCounter = 1
-                console.log(cilckedCard1, clickCounter)
-            } else if (clickCounter === 1 && this.dataset.faceUp === 0) {
+                console.log(clickedCard1, clickCounter)
+            } else if (clickCounter === 1 && this.dataset.faceUp == 0) {
                 cardShow(this, deck)
                 //comparison()
             }
