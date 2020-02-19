@@ -1,7 +1,6 @@
 var clickCounter = 0
 var clickedCard1 = {}
 var clickedCard2 = {}
-var winCounter = 0
 
 
 fetch('./deck.json')

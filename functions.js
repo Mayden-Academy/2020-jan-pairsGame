@@ -72,9 +72,24 @@ function clickLogic (clickedCard, deck) {
         }
         if (comparison(clickedCard1.url, clickedCard2.url)) {
             clickCounter = 0
+            if(winState()) {
+                //add function gameEnd() here
+            }
         } else {
             clickCounter = 2
             cardHide(clickedCard1, clickedCard2)
         }
     }
 }
+
+function winState() {
+    let result = true
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(function (card) {
+        if(card.dataset.faceUp == 0) {
+            result = false
+        }
+    })
+    return result
+}
+
