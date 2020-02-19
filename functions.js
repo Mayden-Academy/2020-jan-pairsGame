@@ -39,3 +39,8 @@ function cardShow (event, deck) {
         }
     })
 }
+
+function cardHide (clickedCard1, clickedCard2) {
+    document.getElementById(clickedCard1.divId).childNodes[0].src = './images/hippo.jpg'
+    document.getElementById(clickedCard2.divId).childNodes[0].src = './images/hippo.jpg'
+}
