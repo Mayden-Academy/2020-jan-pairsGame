@@ -82,3 +82,7 @@ function clickLogic (clickedCard, deck) {
         }
     }
 }
+
+function gameEnd () {
+    $('#winScreen').fadeIn(1500)
+}
