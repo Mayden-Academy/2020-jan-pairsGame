@@ -42,5 +42,7 @@ function cardShow (event, deck) {
 
 function cardHide (clickedCard1, clickedCard2) {
     document.getElementById(clickedCard1.divId).childNodes[0].src = './images/hippo.jpg'
+    document.getElementById(clickedCard1.divId).dataset.faceUp = '0'
     document.getElementById(clickedCard2.divId).childNodes[0].src = './images/hippo.jpg'
+    document.getElementById(clickedCard2.divId).dataset.faceUp = '0'
 }
