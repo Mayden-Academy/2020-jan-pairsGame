@@ -1,5 +1,6 @@
 var clickCounter = 0
 var clickedCard1 = {}
+var clickedCard2 = {}
 
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
@@ -30,29 +31,7 @@ function addClickEvents (deck) {
     let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
-        // this.dataset.faceUp = 0
-            if (clickCounter === 0 && this.dataset.faceUp == 0) {
-                cardShow(this, deck)
-                clickedCard1 = {
-                    divID : this.id,
-                    url : this.childNodes[0].src
-                }
-                clickCounter = 1
-            } else if (clickCounter === 1 && this.dataset.faceUp == 0) {
-                clickedCard2 = {
-                    divID : this.id,
-                    url : this.childNodes[0].src
-                }
-                cardShow(this, deck)
-                if (comparison(clickedCard1.url, clickedCard2.url)) {
-                    clickCounter = 0
-                } else {
-                    cardHide(clickedCard1, clickedCard2)
-                    clickCounter = 0
-                }
-            }
-
-
+            clickLogic(this, deck)
         })
     })
 }
@@ -73,9 +52,33 @@ function cardHide (clickedCard1, clickedCard2) {
         document.getElementById(clickedCard1.divId).dataset.faceUp = '0'
         document.getElementById(clickedCard2.divId).childNodes[0].src = './images/hippo.jpg'
         document.getElementById(clickedCard2.divId).dataset.faceUp = '0'
-    }, 2000)
+        clickCounter = 0
+    }, 1000)
 }
 
 function comparison(a, b) {
      return (a === b)
+}
+
+function clickLogic (clickedCard, deck) {
+    if (clickCounter === 0 && clickedCard.dataset.faceUp == 0) {
+        cardShow(clickedCard, deck)
+        clickedCard1 = {
+            divId : clickedCard.id,
+            url : clickedCard.childNodes[0].src
+        }
+        clickCounter = 1
+    } else if (clickCounter === 1 && clickedCard.dataset.faceUp == 0) {
+        cardShow(clickedCard, deck)
+        clickedCard2 = {
+            divId : clickedCard.id,
+            url : clickedCard.childNodes[0].src
+        }
+        if (comparison(clickedCard1.url, clickedCard2.url)) {
+            clickCounter = 0
+        } else {
+            clickCounter = 2
+            cardHide(clickedCard1, clickedCard2)
+        }
+    }
 }
