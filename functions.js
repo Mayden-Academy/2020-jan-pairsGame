@@ -39,3 +39,10 @@ function cardShow (event, deck) {
         }
     })
 }
+
+function comparison(a, b) {
+     return (a === b)
+}
+
+
+
