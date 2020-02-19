@@ -71,6 +71,7 @@ main {
 
 .card img {
     border-radius: 10px;
+    cursor: pointer;
 }
 
 footer {
@@ -78,6 +79,7 @@ footer {
     border-radius: 10px;
     padding: 10px 20px 20px 20px;
     margin-top: 10px;
+    margin-bottom: 100px;
 }
 
 footer h2 {
