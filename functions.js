@@ -1,6 +1,7 @@
 var clickCounter = 0
 var clickedCard1 = {}
 var clickedCard2 = {}
+var turnCounter = 0
 
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
@@ -80,5 +81,8 @@ function clickLogic (clickedCard, deck) {
             clickCounter = 2
             cardHide(clickedCard1, clickedCard2)
         }
+        turnCounter++
+        console.log(turnCounter)
+        document.getElementById('turnContainer').textContent = turnCounter
     }
 }
