@@ -5,5 +5,7 @@ fetch('./deck.json')
         deck = randomiseDeck(deck)
         assignCards(deck)
         addClickEvents(deck)
+    }).catch(()=>{
+        alert('Something went wrong. Please refresh the page.')
     })
 
