@@ -6,6 +6,6 @@ fetch('./deck.json')
         assignCards(deck)
         addClickEvents(deck)
     }).catch(()=>{
-        alert('Something went wrong. Please refresh the page.')
+        alert('Something went wrong. Please contact an administrator.')
     })
 
