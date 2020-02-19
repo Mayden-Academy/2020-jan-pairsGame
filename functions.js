@@ -18,6 +18,7 @@ function assignCards (deck) {
     let i = 0
     cards.forEach(function(card) {
         card.dataset.id = deck[i].id
+        card.dataset.faceUp = '0'
         i++
     })
 }
@@ -36,6 +37,7 @@ function cardShow (event, deck) {
     deck.forEach(function (card) {
         if (dataId === card.id) {
             event.childNodes[0].src = card.url
+            event.dataset.faceUp = '1'
         }
     })
 }
