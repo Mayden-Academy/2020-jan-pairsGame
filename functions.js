@@ -1,7 +1,3 @@
-var clickCounter = 0
-var clickedCard1 = {}
-var clickedCard2 = {}
-
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
     let temp, randomIndex
