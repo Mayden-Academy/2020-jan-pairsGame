@@ -82,7 +82,6 @@ function clickLogic (clickedCard, deck) {
             cardHide(clickedCard1, clickedCard2)
         }
         turnCounter++
-        console.log(turnCounter)
         document.getElementById('turnContainer').textContent = turnCounter
     }
 }
