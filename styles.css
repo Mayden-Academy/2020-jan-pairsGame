@@ -68,12 +68,23 @@ h3 {
     border-radius: 10px;
     padding-top: 11px;
     position: absolute;
-    top: 80px;
     left: -110px;
 }
 
-.sideBox div {
+.sideBox1 div {
     font-size: 40px;
+}
+
+.sideBox2 div {
+    font-size: 30px;
+}
+
+.sideBox1 {
+    top: 80px;
+}
+
+.sideBox2 {
+    top: 190px;
 }
 
 main {
