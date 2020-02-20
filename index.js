@@ -1,3 +1,8 @@
+var clickCounter = 0
+var clickedCard1 = {}
+var clickedCard2 = {}
+var turnCounter = 0
+
 fetch('./deck.json')
     .then(data => data.json())
     .then((fetchDeck)=>{

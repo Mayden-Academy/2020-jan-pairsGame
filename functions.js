@@ -1,8 +1,3 @@
-var clickCounter = 0
-var clickedCard1 = {}
-var clickedCard2 = {}
-var turnCounter = 0
-
 function randomiseDeck(cardArray) {
     let currentIndex = cardArray.length
     let temp, randomIndex
@@ -75,17 +70,33 @@ function clickLogic (clickedCard, deck) {
             divId : clickedCard.id,
             url : clickedCard.childNodes[0].src
         }
+        turnCounter++
+        document.getElementById('turnContainer').textContent = String(turnCounter)
         if (comparison(clickedCard1.url, clickedCard2.url)) {
             clickCounter = 0
+            if(winState()) {
+                gameEnd()
+            }
         } else {
             clickCounter = 2
             cardHide(clickedCard1, clickedCard2)
         }
-        turnCounter++
-        document.getElementById('turnContainer').textContent = String(turnCounter)
     }
 }
 
+
 function gameEnd () {
+    document.getElementById('totalTurns').textContent = turnCounter
     $('#winScreen').fadeIn(1500)
+}
+
+function winState() {
+    let result = true
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(function (card) {
+        if(card.dataset.faceUp == 0) {
+            result = false
+        }
+    })
+    return result
 }
