@@ -1,3 +1,7 @@
+let clickCounter = 0, turnCounter = 0
+let clickedCard1 = {}, clickedCard2 = {}
+let cards = document.querySelectorAll('.card')
+
 fetch('./deck.json')
     .then(data => data.json())
     .then((fetchDeck)=>{
