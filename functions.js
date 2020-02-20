@@ -55,6 +55,10 @@ function comparison(a, b) {
 }
 
 function clickLogic (clickedCard, deck) {
+    if (clickCounter === 0 && turnCounter === 0) {
+        setTimer()
+    }
+
     if (clickCounter === 0 && clickedCard.dataset.faceUp == 0) {
         cardShow(clickedCard, deck)
         clickedCard1 = {
@@ -83,7 +87,9 @@ function clickLogic (clickedCard, deck) {
 }
 
 function gameEnd () {
+    clearInterval(timer)
     document.getElementById('totalTurns').textContent = turnCounter.toString()
+    document.getElementById('totalTime').textContent = displayedTime
     $('#winScreen').fadeIn(1500)
 }
 
