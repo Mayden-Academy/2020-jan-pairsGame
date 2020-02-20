@@ -70,18 +70,23 @@ function clickLogic (clickedCard, deck) {
             divId : clickedCard.id,
             url : clickedCard.childNodes[0].src
         }
+        turnCounter++
+        document.getElementById('turnContainer').textContent = String(turnCounter)
         if (comparison(clickedCard1.url, clickedCard2.url)) {
             clickCounter = 0
             if(winState()) {
-                //add function gameEnd() here
+                gameEnd()
             }
         } else {
             clickCounter = 2
             cardHide(clickedCard1, clickedCard2)
         }
-        turnCounter++
-        document.getElementById('turnContainer').textContent = String(turnCounter)
     }
+}
+
+function gameEnd () {
+    document.getElementById('totalTurns').textContent = String(turnCounter)
+    $('#winScreen').fadeIn(1500)
 }
 
 function winState() {
@@ -94,4 +99,3 @@ function winState() {
     })
     return result
 }
-
