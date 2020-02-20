@@ -14,7 +14,6 @@ function randomiseDeck(cardArray) {
 }
 
 function assignCards (deck) {
-    let cards = document.querySelectorAll('.card')
     let i = 0
     cards.forEach(function(card) {
         card.dataset.id = deck[i].id
@@ -24,7 +23,6 @@ function assignCards (deck) {
 }
 
 function addClickEvents (deck) {
-    let cards = document.querySelectorAll('.card')
     cards.forEach(function (card) {
         card.addEventListener('click', function (e) {
             clickLogic(this, deck)
@@ -71,10 +69,10 @@ function clickLogic (clickedCard, deck) {
             url : clickedCard.childNodes[0].src
         }
         turnCounter++
-        document.getElementById('turnContainer').textContent = String(turnCounter)
+        document.getElementById('turnContainer').textContent = turnCounter.toString()
         if (comparison(clickedCard1.url, clickedCard2.url)) {
             clickCounter = 0
-            if(winState()) {
+            if (winState()) {
                 gameEnd()
             }
         } else {
@@ -85,17 +83,10 @@ function clickLogic (clickedCard, deck) {
 }
 
 function gameEnd () {
-    document.getElementById('totalTurns').textContent = String(turnCounter)
+    document.getElementById('totalTurns').textContent = turnCounter.toString()
     $('#winScreen').fadeIn(1500)
 }
 
 function winState() {
-    let result = true
-    let cards = document.querySelectorAll('.card')
-    cards.forEach(function (card) {
-        if(card.dataset.faceUp == 0) {
-            result = false
-        }
-    })
-    return result
+     return Array.from(cards).every(card => card.dataset.faceUp == 1)
 }
