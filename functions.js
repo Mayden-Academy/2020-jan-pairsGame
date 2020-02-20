@@ -55,6 +55,10 @@ function comparison(a, b) {
 }
 
 function clickLogic (clickedCard, deck) {
+    if (clickCounter === 0 && turnCounter === 0) {
+        setTimer()
+    }
+
     if (clickCounter === 0 && clickedCard.dataset.faceUp == 0) {
         cardShow(clickedCard, deck)
         clickedCard1 = {
@@ -83,10 +87,29 @@ function clickLogic (clickedCard, deck) {
 }
 
 function gameEnd () {
+    clearInterval(timer)
     document.getElementById('totalTurns').textContent = turnCounter.toString()
+    document.getElementById('totalTime').textContent = displayedTime
     $('#winScreen').fadeIn(1500)
 }
 
 function winState() {
      return Array.from(cards).every(card => card.dataset.faceUp == 1)
+}
+
+function setTimer() {
+    let minutes = 0, seconds = 0
+    timer = setInterval(()=>{
+        seconds++
+        if (seconds === 60) {
+            minutes++
+            seconds = 0
+        }
+        displayedTime = twoDigitFormat(minutes) + ':' + twoDigitFormat(seconds)
+        document.getElementById('timeContainer').textContent = displayedTime
+    }, 1000)
+}
+
+function twoDigitFormat(number) {
+    return (number < 10 ? '0' : '') + number
 }

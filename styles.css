@@ -68,12 +68,24 @@ h3 {
     border-radius: 10px;
     padding-top: 11px;
     position: absolute;
-    top: 80px;
     left: -110px;
 }
 
-.sideBox div {
+.sideBoxTurns {
+    top: 80px;
+}
+
+.sideBoxTurns div {
     font-size: 40px;
+}
+
+.sideBoxTimer {
+    top: 190px;
+}
+
+.sideBoxTimer div {
+    font-size: 25px;
+    margin-top: 11px;
 }
 
 main {
@@ -109,7 +121,8 @@ main {
     margin: 10px 0;
 }
 
-#totalTurns {
+#totalTurns,
+#totalTime {
     color: #F27424;
 }
 
