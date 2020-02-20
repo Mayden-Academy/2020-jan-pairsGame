@@ -90,3 +90,20 @@ function gameEnd () {
 function winState() {
      return Array.from(cards).every(card => card.dataset.faceUp == 1)
 }
+
+function setTimer() {
+    let minutes = 0, seconds = 0
+    timer = setInterval(()=>{
+        seconds++
+        if (seconds === 60) {
+            minutes++
+            seconds = 0
+        }
+        displayedTime = twoDigitFormat(minutes) + ':' + twoDigitFormat(seconds)
+        document.getElementById('timeContainer').textContent = displayedTime
+    }, 1000)
+}
+
+function twoDigitFormat(number) {
+    return (number < 10 ? '0' : '') + number
+}
