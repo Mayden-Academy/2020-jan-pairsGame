@@ -76,7 +76,7 @@ h3 {
 }
 
 .sideBox2 div {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sideBox1 {
@@ -85,6 +85,10 @@ h3 {
 
 .sideBox2 {
     top: 190px;
+}
+
+.sideBox2 h3 {
+    margin-bottom: 11px;
 }
 
 main {
