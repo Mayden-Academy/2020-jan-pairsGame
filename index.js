@@ -11,7 +11,6 @@ fetch('./deck.json')
         deck = randomiseDeck(deck)
         assignCards(deck)
         addClickEvents(deck)
-        setTimer()
     }).catch(()=>{
         alert('Something went wrong. Please contact an administrator.')
     })
