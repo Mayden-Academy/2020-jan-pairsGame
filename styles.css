@@ -71,21 +71,21 @@ h3 {
     left: -110px;
 }
 
-.sideBox1 div {
-    font-size: 40px;
-}
-
-.sideBox2 div {
-    font-size: 25px;
-    margin-top: 11px;
-}
-
-.sideBox1 {
+.sideBoxTurns {
     top: 80px;
 }
 
-.sideBox2 {
+.sideBoxTurns div {
+    font-size: 40px;
+}
+
+.sideBoxTimer {
     top: 190px;
+}
+
+.sideBoxTimer div {
+    font-size: 25px;
+    margin-top: 11px;
 }
 
 main {
