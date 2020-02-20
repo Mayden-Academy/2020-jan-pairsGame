@@ -84,9 +84,8 @@ function clickLogic (clickedCard, deck) {
     }
 }
 
-
 function gameEnd () {
-    document.getElementById('totalTurns').textContent = turnCounter
+    document.getElementById('totalTurns').textContent = String(turnCounter)
     $('#winScreen').fadeIn(1500)
 }
 
