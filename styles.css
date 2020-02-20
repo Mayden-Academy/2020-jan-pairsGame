@@ -126,6 +126,24 @@ main {
     color: #F27424;
 }
 
+#winScreen a {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #F27424;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 50px;
+    border: 1.5px solid #F27424;
+    transition: background-color 0.6s;
+}
+
+#winScreen a:hover {
+    background-color: #94BA66;
+    transition: background-color 0.6s;
+}
+
 .card {
     width: 150px;
     height: 150px;
